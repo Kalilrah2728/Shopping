@@ -25,11 +25,13 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:textColor="@color/black"
             android:text="@{cartitemmodel.name}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
@@ -39,16 +41,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
             android:text="@{cartitemmodel.price}"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="15dp"
+            android:id="@+id/delete_item"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/linearLayout"
@@ -58,38 +59,14 @@
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center"
             android:orientation="horizontal"
+            app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintEnd_toStartOf="@+id/delete_item"
             app:layout_constraintTop_toTopOf="@+id/imageView2">
-
-            <TextView
-                android:id="@+id/bu1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_bg"
-                android:padding="5dp"
-                android:text="+"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="15dp"
-                android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/tex1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/text_bg"
-                android:gravity="center"
-                android:text="0" />
-
-            <View
-                android:layout_width="15dp"
-                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/bu2"
@@ -99,7 +76,35 @@
                 android:padding="5dp"
                 android:text="-"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tex1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/text_bg"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/bu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                android:padding="5dp"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

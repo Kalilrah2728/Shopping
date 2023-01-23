@@ -28,9 +28,7 @@ class CartItemActivity : AppCompatActivity() {
         }
 
         viewModel.getAllCart().observe(this) {
-            viewModel.beneficiary.clear()
             if (!it.isNullOrEmpty()) {
-
                 it.iterator().forEach {
                     viewModel.beneficiary.add(
                         CartItem(
@@ -51,7 +49,5 @@ class CartItemActivity : AppCompatActivity() {
         cartitemsAdapter = CartitemsAdapter(this, it)
         dataBinding.recyclerView1.adapter = cartitemsAdapter
         cartitemsAdapter.notifyDataSetChanged()
-        startActivity(intent)
-        finish()
     }
 }
