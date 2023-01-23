@@ -31,15 +31,18 @@ class ProductlistActivity : AppCompatActivity() {
             this.productlistmodel = viewModel
         }
 
-        viewModel.productListResponseModel.observe(this) {
+        /*viewModel.productListResponseModel.observe(this) {
             adapter = ProductlistAdapter(this,it.products)
             dataBinding.recyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
-        }
+        }*/
 
         viewModel.getData()!!.observe(this) {
             it.products
             println("ITEMS" + it.products)
+            adapter = ProductlistAdapter(this,it.products)
+            dataBinding.recyclerView.adapter = adapter
+            adapter.notifyDataSetChanged()
         }
 
     }

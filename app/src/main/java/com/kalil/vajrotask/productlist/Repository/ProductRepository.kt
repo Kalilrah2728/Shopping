@@ -32,6 +32,7 @@ object ProductRepository {
                 val msg = data!!.products
 
                 serviceSetterGetter.value = Datamodel(msg)
+                println("Data  " +msg)
             }
         })
 

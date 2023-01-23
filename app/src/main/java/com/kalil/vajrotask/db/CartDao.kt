@@ -8,12 +8,12 @@ import com.kalil.vajrotask.productlist.model.Product
 @Dao
 interface CartDao {
     @Query("SELECT * FROM cart_items")
-    suspend fun getAll(): List<Product>
+    suspend fun getAll(): List<CartItem>
 
     @Insert
     suspend fun insertAll(CartItem: CartItem)
 
-    @Query("SELECT * FROM cart_items where autoId = :autoId")
-    suspend fun delete(autoId: String?)
+    @Query("Delete FROM cart_items where ID = :autoId")
+    suspend fun delete(autoId: Int?)
 
 }
