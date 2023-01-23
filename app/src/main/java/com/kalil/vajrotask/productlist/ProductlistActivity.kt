@@ -1,15 +1,16 @@
 package com.kalil.vajrotask.productlist
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.kalil.vajrotask.R
+import com.kalil.vajrotask.cartitem.CartItemActivity
 import com.kalil.vajrotask.databinding.ActivityProductlistBinding
 import com.kalil.vajrotask.productlist.adapter.ProductlistAdapter
 import com.kalil.vajrotask.productlist.model.Datamodel
-import com.kalil.vajrotask.productlist.model.Product
 import com.kalil.vajrotask.productlist.viewmodel.ProductlistviewModel
 
 class ProductlistActivity : AppCompatActivity() {
@@ -43,6 +44,10 @@ class ProductlistActivity : AppCompatActivity() {
             adapter = ProductlistAdapter(this,it.products)
             dataBinding.recyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
+        }
+
+        dataBinding.imageView8.setOnClickListener{
+            startActivity(Intent(this,CartItemActivity::class.java))
         }
 
     }

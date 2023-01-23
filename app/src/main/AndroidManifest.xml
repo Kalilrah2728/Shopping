@@ -16,7 +16,7 @@
         android:theme="@style/Theme.VajroTask"
         tools:targetApi="31">
         <activity
-            android:name=".cartitem.CartIremActivity"
+            android:name=".cartitem.CartItemActivity"
             android:exported="false" />
         <activity
             android:name=".productlist.ProductlistActivity"

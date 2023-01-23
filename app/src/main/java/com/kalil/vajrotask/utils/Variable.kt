@@ -1,4 +1,4 @@
-package com.twinkle.ncsl.projectutils
+package com.kalil.vajrotask.utils
 
 import androidx.lifecycle.MutableLiveData
 

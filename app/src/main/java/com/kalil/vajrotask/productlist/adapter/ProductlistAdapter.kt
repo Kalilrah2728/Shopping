@@ -1,14 +1,13 @@
 package com.kalil.vajrotask.productlist.adapter
 
+import android.view.View
 import com.kalil.vajrotask.R
 import com.kalil.vajrotask.databinding.ProductlistAdapterBinding
-import com.kalil.vajrotask.db.CartDao
-import com.kalil.vajrotask.db.CartItem
 import com.kalil.vajrotask.db.DbRepository
 import com.kalil.vajrotask.db.RoomDb
 import com.kalil.vajrotask.productlist.ProductlistActivity
 import com.kalil.vajrotask.productlist.model.Product
-import com.twinkle.ncsl.projectutils.BaseRecyclerAdapter
+import com.kalil.vajrotask.utils.BaseRecyclerAdapter
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -31,6 +30,8 @@ class ProductlistAdapter(
             GlobalScope.launch {
                 dbRepository.insertCartItems(item)
             }
+            holder.textView5.visibility = View.VISIBLE
+            holder.textView4.visibility = View.GONE
         }
     }
 

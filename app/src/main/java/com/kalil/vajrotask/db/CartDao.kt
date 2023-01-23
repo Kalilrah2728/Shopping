@@ -1,5 +1,6 @@
 package com.kalil.vajrotask.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -8,7 +9,7 @@ import com.kalil.vajrotask.productlist.model.Product
 @Dao
 interface CartDao {
     @Query("SELECT * FROM cart_items")
-    suspend fun getAll(): List<CartItem>
+    fun getAll(): LiveData<List<CartItem>>
 
     @Insert
     suspend fun insertAll(CartItem: CartItem)
