@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="productlistmmodel"
             type="com.kalil.vajrotask.productlist.model.Product" />
@@ -15,12 +16,16 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            imageUrl="@{productlistmmodel.image}"
+            android:src="@drawable/place_holder"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginStart="10dp"
+            android:background="@drawable/circle"
+            android:scaleType="fitXY"
+            android:clipToOutline="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_shoppingcart" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -46,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:text="Add to cart"
-            android:padding="05dp"
-            android:textColor="@color/white"
             android:background="@drawable/button_bg"
+            android:padding="05dp"
+            android:text="Add to cart"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
@@ -59,11 +64,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:text="View cart"
+            android:background="@drawable/text_bg"
             android:padding="05dp"
+            android:text="View cart"
             android:textColor="@color/black"
             android:visibility="gone"
-            android:background="@drawable/text_bg"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />

@@ -26,6 +26,7 @@ class ProductlistAdapter(
         holder.productlistmmodel = mList[position]
         val item = mList[position]
 
+        holder.imageView2.clipToOutline = true
         holder.textView4.setOnClickListener{
             GlobalScope.launch {
                 dbRepository.insertCartItems(item)

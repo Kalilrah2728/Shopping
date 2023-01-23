@@ -16,12 +16,16 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            imageUrl="@{cartitemmodel.avatar}"
+            android:src="@drawable/place_holder"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginStart="10dp"
+            android:background="@drawable/circle"
+            android:scaleType="fitXY"
+            android:clipToOutline="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_shoppingcart" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
