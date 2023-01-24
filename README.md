@@ -1,1 +1,1 @@
-# Shoping
+# Shopping
