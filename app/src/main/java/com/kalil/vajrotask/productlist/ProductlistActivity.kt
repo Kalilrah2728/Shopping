@@ -25,18 +25,14 @@ class ProductlistActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productlist)
 
+
+
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_productlist)
         viewModel = ViewModelProvider(this)[ProductlistviewModel::class.java]
         dataBinding.apply {
             this.lifecycleOwner = this@ProductlistActivity
             this.productlistmodel = viewModel
         }
-
-        /*viewModel.productListResponseModel.observe(this) {
-            adapter = ProductlistAdapter(this,it.products)
-            dataBinding.recyclerView.adapter = adapter
-            adapter.notifyDataSetChanged()
-        }*/
 
         viewModel.getData()!!.observe(this) {
             it.products

@@ -34,6 +34,8 @@ class Splash_screen : AppCompatActivity() {
         }
     }
 
+
+
     private fun loadActivity() {
         startActivity(Intent(this@Splash_screen, ProductlistActivity::class.java))
         finish()
